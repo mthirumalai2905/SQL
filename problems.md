@@ -97,6 +97,7 @@
   ALTER TABLE table_name
   CHANGE COLUMN old_name new_name new_datatype new_constraint;
   ```
+
 5. Modify Column
    ```sql
    ALTER TABLE table_name
