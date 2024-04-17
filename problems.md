@@ -173,7 +173,7 @@ FROM employees
 ORDER BY department;
 ```
 
-Sure! Here are the queries to create views based on the provided questions:
+
 
 1. **Create a view named `hr_employees` that shows the details of employees working in the HR department:**
 ```sql
