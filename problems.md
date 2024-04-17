@@ -73,4 +73,32 @@
     FROM Customers 
     WHERE first_name LIKE "J%";
     ```
+**ALTER**
+1. Add Column
+   ```sql
+   ALTER TABLE table_name
+   ADD COLUMN column_name datatype constraint
+   ```
 
+2. Drop Column
+   ```sql
+   ALTER TABLE table_name
+   DROP COLUMN column_name
+   ```
+
+3. Rename Table
+   ```sql
+   ALTER TABLE table_name
+   RENAME TO new_table_name
+   ```
+
+4. Change Column
+  ```sql
+  ALTER TABLE table_name
+  CHANGE COLUMN old_name new_name new_datatype new_constraint;
+  ```
+5. Modify Column
+   ```sql
+   ALTER TABLE table_name
+   MODIFY col_name new_datatype new_constraint;
+   ```
