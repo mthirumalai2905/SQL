@@ -103,3 +103,74 @@
    ALTER TABLE table_name
    MODIFY col_name new_datatype new_constraint;
    ```
+
+ 
+
+1. **Total number of employees in each department**:
+```sql
+SELECT department, COUNT(employee_name) AS total_employees
+FROM employees
+GROUP BY department;
+```
+
+2. **Departments with more than two employees**:
+```sql
+SELECT department, COUNT(employee_name) AS total_employees
+FROM employees
+GROUP BY department
+HAVING COUNT(employee_name) > 2;
+```
+
+3. **Average salary of employees in the IT department**:
+```sql
+SELECT AVG(salary) AS average_salary_it
+FROM employees
+WHERE department = 'IT';
+```
+
+4. **Number of employees with a salary higher than $60,000**:
+```sql
+SELECT COUNT(*) AS high_salary_count
+FROM employees
+WHERE salary > 60000;
+```
+
+5. **Employee with the highest salary**:
+```sql
+SELECT employee_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 1;
+```
+
+6. **Total salary expense for the company**:
+```sql
+SELECT SUM(salary) AS total_salary_expense
+FROM employees;
+```
+
+7. **Department with the highest average salary**:
+```sql
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+ORDER BY AVG(salary) DESC
+LIMIT 1;
+```
+
+8. **Employees in the HR department earning more than the department's average salary**:
+```sql
+SELECT employee_name, salary
+FROM employees
+WHERE department = 'HR'
+AND salary > (SELECT AVG(salary) FROM employees WHERE department = 'HR');
+```
+
+9. **Employees along with their departments, sorted by department name**:
+```sql
+SELECT employee_name, department
+FROM employees
+ORDER BY department;
+```
+
+
