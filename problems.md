@@ -173,4 +173,52 @@ FROM employees
 ORDER BY department;
 ```
 
+Sure! Here are the queries to create views based on the provided questions:
+
+1. **Create a view named `hr_employees` that shows the details of employees working in the HR department:**
+```sql
+CREATE VIEW hr_employees AS
+SELECT *
+FROM employees
+WHERE department = 'HR';
+```
+
+2. **Create a view named `high_salary_employees` that displays the details of employees with a salary higher than $60,000:**
+```sql
+CREATE VIEW high_salary_employees AS
+SELECT *
+FROM employees
+WHERE salary > 60000;
+```
+
+3. **Create a view named `department_avg_salary` that calculates the average salary for each department:**
+```sql
+CREATE VIEW department_avg_salary AS
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department;
+```
+
+4. **Create a view named `employee_count_by_department` that counts the number of employees in each department:**
+```sql
+CREATE VIEW employee_count_by_department AS
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+```
+
+5. **Create a view named `employee_names_sorted` that lists the names of employees sorted alphabetically:**
+```sql
+CREATE VIEW employee_names_sorted AS
+SELECT employee_name
+FROM employees
+ORDER BY employee_name;
+```
+
+6. **Create a view named `total_salary_expense` that calculates the total salary expense for the company:**
+```sql
+CREATE VIEW total_salary_expense AS
+SELECT SUM(salary) AS total_salary_expense
+FROM employees;
+```
 
